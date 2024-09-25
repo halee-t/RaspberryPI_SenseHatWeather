@@ -29,7 +29,7 @@ W=[255,255,255]
 # Read temp and humidity CONTINUOUSLY
 while True:
     # wait 2 seconds between each display!
-    time.sleep(2)
+    time.sleep(1)
     temp = sense.get_temperature()
     print("Temperature: %.2f C" % temp)
 
@@ -92,11 +92,13 @@ while True:
         W,X,W,X,W,X,W,X
     ]
 
-    while (temp<0 and humidity>80):
+    if (temp<0 and humidity>80):
         sense.set_pixels(snow1)
         time.sleep(1)
         sense.set_pixels(snow2)
-        time.sleep(1)
+
+    else :
+        sense.clear()
 
 # Display Rain when temp^0C and humidity=100%
     rain1=[
@@ -121,9 +123,11 @@ while True:
         B,X,B,X,B,X,B,X
     ]
 
-    while (temp>0 and humidity==100):
+    if (temp>0 and humidity==100):
         sense.set_pixels(rain1)
         time.sleep(1)
         sense.set_pixels(rain2)
-        time.sleep(1)
+
+    else :
+        sense.clear()
 
