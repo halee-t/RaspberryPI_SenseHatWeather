@@ -18,6 +18,14 @@ V=[138,43,226]
 X=[0,0,0]
 W=[255,255,255]
 
+# Hard coded values for testing
+# temp = 30
+# temp = -10
+# temp = 18
+# humidity = 82
+# humidity = 60
+# humidity = 100
+
 # Read temp and humidity CONTINUOUSLY
 while True:
     # wait 2 seconds between each display!
